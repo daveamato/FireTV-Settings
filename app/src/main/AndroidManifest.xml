@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.Markus.FireTools"
+    package="com.markus.firetools"
     tools:ignore="GoogleAppIndexingWarning">
 
     <uses-feature
@@ -19,7 +20,7 @@
         android:theme="@style/Theme.Leanback"
         android:fullBackupContent="@xml/backup_descriptor">
         <activity
-            android:name="com.Markus.FireTools.MainActivity"
+            android:name="com.markus.firetools.SettingsActivity"
             android:banner="@drawable/ic_hud_settings_stick"
             android:icon="@drawable/ic_hud_settings_stick"
             android:label="@string/app_name"
@@ -29,16 +30,22 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+            <intent-filter android:priority="100">
+                <action android:name="android.settings.SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
 
         <activity
-            android:name="com.Markus.FireTools.A1Activity"
+            android:name=".A1Activity"
             android:banner="@drawable/ic_hud_sleep_default"
             android:icon="@drawable/ic_hud_sleep_default"
             android:label="@string/two_opts_res3"
             android:logo="@drawable/ic_hud_sleep_default"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"
             android:taskAffinity="com.Markus.FireTools.A1Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,146 +53,7 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="com.Markus.FireTools.A2Activity"
-            android:banner="@drawable/icon_display_and_sound"
-            android:icon="@drawable/icon_display_and_sound"
-            android:label="@string/two_opts_display"
-            android:logo="@drawable/icon_display_and_sound"
-            android:screenOrientation="landscape">
-            android:taskAffinity="com.Markus.FireTools.A2Activity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
 
-        <activity
-            android:name="com.Markus.FireTools.A3Activity"
-            android:banner="@drawable/icon_network"
-            android:icon="@drawable/icon_network"
-            android:label="@string/two_opts_net"
-            android:logo="@drawable/icon_network"
-            android:screenOrientation="landscape">
-            android:taskAffinity="com.Markus.FireTools.A3Activity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.Markus.FireTools.A4Activity"
-            android:banner="@drawable/icon_device"
-            android:icon="@drawable/icon_device"
-            android:label="@string/two_opts_device"
-            android:logo="@drawable/icon_device"
-            android:screenOrientation="landscape">
-            android:taskAffinity="com.Markus.FireTools.A4Activity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.Markus.FireTools.A5Activity"
-            android:banner="@drawable/icon_accessibility"
-            android:icon="@drawable/icon_accessibility"
-            android:label="@string/two_opts_access"
-            android:logo="@drawable/icon_accessibility"
-            android:screenOrientation="landscape">
-            android:taskAffinity="com.Markus.FireTools.A5Activity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.Markus.FireTools.A6Activity"
-            android:banner="@drawable/icon_applications"
-            android:icon="@drawable/icon_applications"
-            android:label="@string/two_opts_app"
-            android:logo="@drawable/icon_applications"
-            android:screenOrientation="landscape">
-            android:taskAffinity="com.Markus.FireTools.A6Activity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.Markus.FireTools.A7Activity"
-            android:banner="@drawable/icon_preferences"
-            android:icon="@drawable/icon_preferences"
-            android:label="@string/two_opts_pref"
-            android:logo="@drawable/icon_preferences"
-            android:screenOrientation="landscape">
-            android:taskAffinity="com.Markus.FireTools.A7Activity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.Markus.FireTools.A8Activity"
-            android:banner="@drawable/icon_controllers"
-            android:icon="@drawable/icon_controllers"
-            android:label="@string/two_opts_dev"
-            android:logo="@drawable/icon_controllers"
-            android:screenOrientation="landscape">
-            android:taskAffinity="com.Markus.FireTools.A8Activity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.Markus.FireTools.A9Activity"
-            android:banner="@drawable/icon_device_control"
-            android:icon="@drawable/icon_device_control"
-            android:label="@string/two_opts_res2"
-            android:logo="@drawable/icon_device_control"
-            android:screenOrientation="landscape">
-            android:taskAffinity="com.Markus.FireTools.A9Activity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.Markus.FireTools.A10Activity"
-            android:banner="@drawable/icon_notifications"
-            android:icon="@drawable/icon_notifications"
-            android:label="@string/two_opts_res1"
-            android:logo="@drawable/icon_notifications"
-            android:screenOrientation="landscape">
-            android:taskAffinity="com.Markus.FireTools.A10Activity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.Markus.FireTools.A11Activity"
-            android:banner="@drawable/icon_account"
-            android:icon="@drawable/icon_account"
-            android:label="@string/two_opts_account"
-            android:logo="@drawable/icon_account"
-            android:screenOrientation="landscape">
-            android:taskAffinity="com.Markus.FireTools.A11Activity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-     </application>
+    </application>
 
 </manifest>
